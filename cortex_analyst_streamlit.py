@@ -2,7 +2,7 @@ from typing import Any, Dict, List, Optional
 
 import pandas as pd
 import requests
-import snowflake.connector
+#import snowflake.connector
 import streamlit as st
 
 
