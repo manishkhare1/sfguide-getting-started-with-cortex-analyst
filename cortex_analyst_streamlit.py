@@ -6,7 +6,7 @@ import snowflake.connector
 import streamlit as st
 
 
-HOST = "<org-name>-<account-name>.snowflakecomputing.com"
+HOST = "A2686926235961.EA62570_STD.snowflakecomputing.com"
 DATABASE = "CORTEX_ANALYST_DEMO"
 SCHEMA = "REVENUE_TIMESERIES"
 STAGE = "RAW_DATA"
@@ -14,13 +14,13 @@ FILE = "revenue_timeseries.yaml"
 
 if 'CONN' not in st.session_state or st.session_state.CONN is None:
     st.session_state.CONN = snowflake.connector.connect(
-        user="<user>",
-        password="<password>",
-        account="<account>",
+        user="manishk",
+        password="Azsxdc@123",
+        account="EA62570_STD",
         host=HOST,
         port=443,
-        warehouse="CORTEX_ANALYST_WH",
-        role="ACCOUNTADMIN",
+        warehouse="WH_XSMALL_1",
+        role="SAPIENCE_ACCOUNTADMIN",
     )
 
 
