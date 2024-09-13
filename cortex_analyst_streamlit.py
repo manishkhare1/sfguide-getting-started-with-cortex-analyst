@@ -6,22 +6,23 @@ import snowflake.connector
 import streamlit as st
 
 
-HOST = ".snowflakecomputing.com"
-DATABASE = "CORTEX_ANALYST_DEMO"
+HOST = "A2686926235961.EA62570_STD.snowflakecomputing.com"
+DATABASE = "MANISHTEST"
 SCHEMA = "REVENUE_TIMESERIES"
 STAGE = "RAW_DATA"
 FILE = "revenue_timeseries.yaml"
 
 if 'CONN' not in st.session_state or st.session_state.CONN is None:
-    st.session_state.CONN = snowflake.connector.connect(
-        user="",
-        password="",
-        account="",
-        host=HOST,
-        port=443,
-        warehouse="",
-        role="",
-    )
+    st.session_state.CONN = st.connection("snowflake")
+    #snowflake.connector.connect(
+     #   user="<user>",
+      #  password="<password>",
+       # account="<account>",
+        #host=HOST,
+        #port=443,
+        #warehouse="CORTEX_ANALYST_WH",
+        #role="ACCOUNTADMIN",
+    #)
 
 
 def send_message(prompt: str) -> Dict[str, Any]:
